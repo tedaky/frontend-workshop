@@ -14,12 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.16.1",
-    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-cache": "^0.4.5",
     "gulp-connect-php": "0.0.8",
-    "gulp-cssnano": "^2.1.0",
     "gulp-haml": "^0.1.6",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^3.0.3",
