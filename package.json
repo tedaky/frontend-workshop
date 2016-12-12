@@ -25,11 +25,10 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^3.0.1",
-    "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.2",
     "hamljs": "^0.6.2",
     "purify-css": "^1.1.9",
     "run-sequence": "^1.2.2",
+    "sass-lint": "^1.10.2",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3"
   }

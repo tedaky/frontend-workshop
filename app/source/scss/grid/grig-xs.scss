@@ -1,0 +1,6 @@
+@import '../variables.scss';
+@import 'grid-mixin.scss';
+
+@media (min-width: $extra-small) {
+    @include make-grid(xs);
+}

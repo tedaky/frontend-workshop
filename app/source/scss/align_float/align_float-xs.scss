@@ -1,0 +1,6 @@
+@import '../variables.scss';
+@import 'align_float-mixin.scss';
+
+@media (min-width: $extra-small) {
+    @include make-custom(xs);
+}
