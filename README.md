@@ -20,3 +20,9 @@ run `gulp browserSync` to create an instance of the site. To stop running the si
 run `gulp sass`.
 
 You should see a `css` folder get created. Inside this folder you should see another folder called `scss`. This folder contains the transpiled `css` `stylesheets`.
+
+#### Typescript Transpile
+
+run `gulp typescript`.
+
+You should see a `javascript` folder get created. Inside this folder you should see another folder called `typescript`. This folder contains the transpiled `javascript` `scripts`.
