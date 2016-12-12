@@ -1,6 +1,13 @@
 # WebProject1
+
 ## Starter project for preprocessing
-### Begin
+
+### Requirements
+
+* [Nodejs](https://nodejs.org/en/)
+* [Git](https://git-scm.com/)
+
+#### Begin
 
 run `npm install` in your terminal.
 
