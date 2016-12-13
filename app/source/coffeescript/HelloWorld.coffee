@@ -1,7 +1,9 @@
 class Startup
     main: () ->
-        console.log('Hello Coffeescript')
-        return 0
+        return 'Hello Coffeescript'
 
 startup = new Startup
-startup.main();
+
+coffeescript = document.getElementById('Coffeescript')
+
+coffeescript.innerHTML = startup.main()

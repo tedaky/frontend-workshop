@@ -1,8 +1,9 @@
 class Startup {
-    public static main(): number {
-        console.log('Hello Typescript');
-        return 0;
+    public static main(): string {
+        return 'Hello Typescript';
     }
 }
 
-Startup.main();
+var typescript = document.getElementById('Typescript');
+
+typescript.innerHTML = Startup.main();
