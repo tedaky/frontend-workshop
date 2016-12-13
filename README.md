@@ -33,7 +33,7 @@ You should see a `css` folder get created. Inside this folder you should see ano
 
 #### [Coffeescript](http://coffeescript.org/) Transpile
 
-run `gulp coffeescript`.
+run `gulp coffee`.
 
 You should see a `javascript` folder get created. Inside this folder you should see another folder called `coffeescript`. This folder contains the transpiled `javascript` `scripts`.
 
