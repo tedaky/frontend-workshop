@@ -17,19 +17,25 @@ run `gulp browserSync` to create an instance of the site. To stop running the si
 
 ### CSS
 
-#### [Sass](http://sass-lang.com/) Transpile
-
-run `gulp sass`.
-
-You should see a `css` folder get created. Inside this folder you should see another folder called `scss`. This folder contains the transpiled `css` `stylesheets`.
-
 #### [Less](http://lesscss.org/) Transpile
 
 run `gulp less`.
 
 You should see a `css` folder get created. Inside this folder you should see another folder called `less`. This folder contains the transpiled `css` `stylesheets`.
 
+#### [Sass](http://sass-lang.com/) Transpile
+
+run `gulp sass`.
+
+You should see a `css` folder get created. Inside this folder you should see another folder called `scss`. This folder contains the transpiled `css` `stylesheets`.
+
 ### Javascript
+
+#### [Coffeescript](http://coffeescript.org/) Transpile
+
+run `gulp coffeescript`.
+
+You should see a `javascript` folder get created. Inside this folder you should see another folder called `coffeescript`. This folder contains the transpiled `javascript` `scripts`.
 
 #### [Typescript](https://www.typescriptlang.org/) Transpile
 
