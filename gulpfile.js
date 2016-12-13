@@ -41,12 +41,16 @@ gulp.task('haml', function () {
 });
 
 // typescript config
-var tsproject = ts.createProject("tsconfig.json");
+var tsProject = ts.createProject("tsconfig.json");
 // typescript
 gulp.task('typescript', function(){
-    return gulp.src(paths.tsinput)
-        .pipe(ts(tsproject))
-        .js.pipe(gulp.dest(paths.tsdest));
+    var tsResult = gulp.src(paths.tsinput)
+        .pipe(sourcemaps.init())
+        .pipe(tsProject());
+
+    return tsResult.js
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(paths.tsdest));
 });
 
 // coffeescript
