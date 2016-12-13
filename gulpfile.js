@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin');
 var runSequence = require('run-sequence');
 var connect = require('gulp-connect-php');
 var ts = require("gulp-typescript");
+var coffee = require('gulp-coffee');
 var haml = require('gulp-haml');
 
 var paths = {
@@ -23,6 +24,9 @@ var paths = {
 
     tsinput: "app/source/typescript/**/*.ts",
     tsdest: "app/javascript/typescript",
+
+    coffeeinput: "app/source/coffeescript/**/*.coffee",
+    coffeedest: "app/javascript/coffeescript",
     
     hamlinput: "app/source/haml/**/*.haml",
     hamldest: "app"
@@ -30,10 +34,10 @@ var paths = {
 
 // haml
 gulp.task('haml', function () {
-  gulp.src(paths.hamlinput)
-    .pipe(haml({ext: '.php'}))
-    //.pipe(gulp.dest(paths.hamldest));
-    .pipe(gulp.dest("app/php"));
+    return gulp.src(paths.hamlinput)
+        .pipe(haml({ext: '.php'}))
+        //.pipe(gulp.dest(paths.hamldest));
+        .pipe(gulp.dest("app/php"));
 });
 
 // typescript config
@@ -43,6 +47,15 @@ gulp.task('typescript', function(){
     return gulp.src(paths.tsinput)
         .pipe(ts(tsproject))
         .js.pipe(gulp.dest(paths.tsdest));
+});
+
+// coffeescript
+gulp.task('coffee', function() {
+    return gulp.src(paths.coffeeinput)
+        .pipe(sourcemaps.init())
+        .pipe(coffee({bare: true}))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(paths.coffeedest));
 });
 
 // dev connection
@@ -67,11 +80,11 @@ var autoprefixerOptions = {
 
 // less
 gulp.task('less', function() {
-    gulp.src(paths.lessinput)
+    return gulp.src(paths.lessinput)
         .pipe(less())
         .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.lessdest))
         .pipe(browserSync.reload({
             stream: true
@@ -89,8 +102,8 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
-        .pipe(sourcemaps.write())
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.sassdest))
         .pipe(browserSync.reload({
             stream: true
