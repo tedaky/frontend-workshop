@@ -47,7 +47,7 @@ gulp.task('typescript', function(){
     var tsResult = gulp.src(paths.tsinput)
         .pipe(sourcemaps.init())
         .pipe(tsProject());
-
+        
     return tsResult.js
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.tsdest));
