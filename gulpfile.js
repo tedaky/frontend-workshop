@@ -2,7 +2,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var less = require('gulp-less');
-var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var gulpIf = require('gulp-if');
@@ -45,20 +44,16 @@ var tsProject = ts.createProject("tsconfig.json");
 // typescript
 gulp.task('typescript', function(){
     var tsResult = gulp.src(paths.tsinput)
-        .pipe(sourcemaps.init())
         .pipe(tsProject());
         
     return tsResult.js
-        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.tsdest));
 });
 
 // coffeescript
 gulp.task('coffee', function() {
     return gulp.src(paths.coffeeinput)
-        .pipe(sourcemaps.init())
         .pipe(coffee({bare: true}))
-        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.coffeedest));
 });
 
@@ -86,9 +81,7 @@ var autoprefixerOptions = {
 gulp.task('less', function() {
     return gulp.src(paths.lessinput)
         .pipe(less())
-        .pipe(sourcemaps.init())
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.lessdest))
         .pipe(browserSync.reload({
             stream: true
@@ -104,10 +97,8 @@ var sassOptions = {
 gulp.task('sass', function() {
     return gulp.src(paths.sassinput)
         .pipe(sass())
-        .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.sassdest))
         .pipe(browserSync.reload({
             stream: true

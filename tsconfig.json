@@ -1,6 +1,6 @@
 {
     "files": [
-        "app/source/typescript/HelloWorld.ts"
+        "app/source/typescript/left-bar.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

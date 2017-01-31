@@ -25,7 +25,6 @@
     "gulp-less": "^3.1.0",
     "gulp-purifycss": "^0.2.0",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^3.0.1",
     "hamljs": "^0.6.2",
     "purify-css": "^1.1.9",
