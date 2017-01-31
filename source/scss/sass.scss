@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ededed;
+}
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.sass {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    vertical-align: top;
+}
+@media (min-width: 768px) {
+    .sass {
+        width: 51%;
+    }
+}
+@media (min-width: 992px) {
+    .sass {
+        width: 55%;
+    }
+}
+@media (min-width: 1200px) {
+    .sass {
+        width: 62%;
+    }
+}
+
+.right-content {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #5a5a5a;
+}
+
+@media (min-width: 768px) {
+    .right-content {
+        min-height: calc(100vh - 62px);
+    }
+    /* less sucks with mixed calculations so left bar is in sass */
+    .left-bar {
+        min-height: calc(100vh - 62px);
+    }
+}
+
+.right-megan-h1 {
+    font-size: 1.5em;
+}
+@media (min-width: 992px) {
+    .right-megan-h1 {
+        font-size: 2em;
+    }
+}

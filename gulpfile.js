@@ -5,39 +5,26 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var gulpIf = require('gulp-if');
-var imagemin = require('gulp-imagemin');
 var runSequence = require('run-sequence');
 var connect = require('gulp-connect-php');
 var ts = require("gulp-typescript");
 var coffee = require('gulp-coffee');
-var haml = require('gulp-haml');
 
 var paths = {
     cssdest: "app/css",
 
-    sassinput: "app/source/scss/**/*.scss",
+    sassinput: "source/scss/**/*.scss",
     sassdest: "app/css/scss",
 
-    lessinput: "app/source/less/**/*.less",
+    lessinput: "source/less/**/*.less",
     lessdest: "app/css/less",
 
-    tsinput: "app/source/typescript/**/*.ts",
+    tsinput: "source/typescript/**/*.ts",
     tsdest: "app/javascript/typescript",
 
-    coffeeinput: "app/source/coffeescript/**/*.coffee",
+    coffeeinput: "source/coffeescript/**/*.coffee",
     coffeedest: "app/javascript/coffeescript",
-    
-    hamlinput: "app/source/haml/**/*.haml",
-    hamldest: "app"
 };
-
-// haml
-gulp.task('haml', function () {
-    return gulp.src(paths.hamlinput)
-        .pipe(haml({ext: '.php'}))
-        //.pipe(gulp.dest(paths.hamldest));
-        .pipe(gulp.dest("app/php"));
-});
 
 // typescript config
 var tsProject = ts.createProject("tsconfig.json");
@@ -74,7 +61,7 @@ gulp.task('browserSync', ['connect'], function() {
 
 // css autoprefixer
 var autoprefixerOptions = {
-    browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+    browsers: ['last 2 versions', '> 1%', 'Firefox ESR', 'Firefox >= 3', 'Opera >= 10', 'IE >= 8', 'Chrome >= 4', 'Safari >= 4', 'iOS >= 2']
 };
 
 // less
@@ -104,13 +91,4 @@ gulp.task('sass', function() {
             stream: true
         }))
         .resume();
-});
-
-// optimize images
-gulp.task('images', function() {
-    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
-        .pipe(cache(imagemin({
-            interlaced: true
-        })))
-        .pipe(gulp.dest('app/images'));
 });
