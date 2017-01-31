@@ -1,4 +1,4 @@
-# WebProject1
+# Front End Developer Workshop
 
 ## Starter project for preprocessing
 
